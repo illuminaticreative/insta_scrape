@@ -186,8 +186,8 @@ module InstaScrape
 
   #split away span tags from user info numbers
   def self.get_span_value(element)
-    begin_split = "\">"
-    end_split = "</span>"
+    begin_split = "title=\""
+    end_split = "\">"
     return element[/#{begin_split}(.*?)#{end_split}/m, 1]
   end
 
