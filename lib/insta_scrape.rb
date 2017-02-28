@@ -110,7 +110,7 @@ module InstaScrape
       follower_count_html = page.find('span', :text => "followers", exact: true)['innerHTML']
       @follower_count = get_span_value(follower_count_html).gsub(',','')
       following_count_html = page.find('span', :text => "following", exact: true)['innerHTML']
-      @following_count = get_span_value(following_count_html).gsub(',','')
+      @following_count = get_span_value(following_count_html)
       description = page.find('h2').first(:xpath,".//..")['innerHTML']
       @description = Nokogiri::HTML(description).text
     end
